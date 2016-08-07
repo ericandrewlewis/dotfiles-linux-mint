@@ -1,0 +1,3 @@
+! Map ThinkPad X200T back and forward buttons to no-op, since they're annoying.
+keycode 166 = NoSymbol
+keycode 167 = NoSymbol
