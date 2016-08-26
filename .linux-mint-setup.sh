@@ -84,12 +84,14 @@ package_install() {
 }
 
 # Enpass repository
-if [ -e /etc/apt/sources.list.d/enpass.list ]; then
+if [ ! -e /etc/apt/sources.list.d/enpass.list ]; then
+  echo "Adding Enpass repository..."
   echo "deb http://repo.sinew.in/ stable main" > \
     /etc/apt/sources.list.d/enpass.list
 fi
 
-# wget -O - http://repo.sinew.in/keys/enpass-linux.key | apt-key add -
+echo "Adding Enpass GPG key..."
+wget -O - http://repo.sinew.in/keys/enpass-linux.key | apt-key add -
 
 # Atom repository
 echo "Adding repository for Atom..."
