@@ -30,6 +30,7 @@ apt_package_check_list=(
   nodejs
   vlc
   spotify-client
+  pidgin
 )
 
 print_pkg_info() {
